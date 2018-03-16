@@ -288,7 +288,7 @@
                             <!-- Text input-->
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Phone #</label>
+                                <label class="col-md-4 control-label">Phone</label>
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -324,7 +324,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Date of Birth</label>
                                 <div class="col-md-4">
-                                    <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                                    <div id="datepicker" class="input-group date" data-date-format="dd-mm-yyyy">
                                         <input class="form-control" type="text" readonly />
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                     </div>
@@ -332,6 +332,48 @@
                             </div>
                             <!-- Text area -->
 
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Aadhar Card</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                        <input name="aadhar_card" placeholder="Enter Aadhar Card Number" class="form-control" type="number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Community</label>
+                                <div class="col-md-4">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="community" value="yes" /> ST
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="community" value="no" /> SC
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="community" value="yes" />OBC
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="community" value="no" />GEN
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="community" value="no" />Others <input type="text" class="form-control" name="communityStatus" placeholder="If Any Other Community" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Present Status</label>
+                                <div class="col-md-4">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="pstatus" value="yes" /> Employeed
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="pstatus" value="no" /> UnEmployeed
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Project Description</label>
                                 <div class="col-md-4 inputGroupContainer">
@@ -490,6 +532,16 @@
                         },
                         notEmpty: {
                             message: 'Please supply your last name'
+                        }
+                    }
+                },
+                aadhar_card: {
+                    validators: {
+                        stringLength: {
+                            min: 12,
+                        },
+                        notEmpty: {
+                            message: 'Please enter your 12-digit aadhar card number'
                         }
                     }
                 },

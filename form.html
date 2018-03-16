@@ -44,12 +44,15 @@
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/datepicker.css">
     <link rel="stylesheet" href="css/form.css">
     <!-- Head Libs -->
     <script src="vendor/modernizr/modernizr.min.js"></script>
     <style>
         .bv-form .help-block{margin-bottom:0}.bv-form .tooltip-inner{text-align:left}.nav-tabs li.bv-tab-success>a{color:#3c763d}.nav-tabs li.bv-tab-error>a{color:#a94442};
         #success_message{ display: none;}
+        #datepicker{width:180px;}
+        #datepicker > span:hover{cursor: pointer;}
     </style>
 </head>
 <body>
@@ -165,11 +168,21 @@
                         <fieldset>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">First Name</label>
+                                <label class="col-md-4 control-label">Post Name</label>
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                                        <input  name="post_name" placeholder="Name of the Post" class="form-control"  type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Candidate Name</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input  name="first_name" placeholder="Candidate Name" class="form-control"  type="text">
                                     </div>
                                 </div>
                             </div>
@@ -177,11 +190,85 @@
                             <!-- Text input-->
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label" >Last Name</label>
+                                <label class="col-md-4 control-label" >Father's/Husband's Name</label>
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                                        <input name="last_name" placeholder="Enter Father or Husband Name" class="form-control"  type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" >Mother's Name</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="mother_name" placeholder="Enter Name of Mother" class="form-control"  type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Address</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                        <input name="address" placeholder="Address" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">State</label>
+                                <div class="col-md-4 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <input name="state_name" placeholder="Enter State Name" class="form-control"  type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">City</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                        <input name="city" placeholder="city" class="form-control"  type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Nationality</label>
+                                <div class="col-md-4 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <input name="nationality" placeholder="Enter Your Nationality" class="form-control"  type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Religion</label>
+                                <div class="col-md-4 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <input name="religion" placeholder="Enter Your Religion" class="form-control"  type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Select Basic -->
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Zip Code</label>
+                                <div class="col-md-4 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                        <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
                                     </div>
                                 </div>
                             </div>
@@ -210,135 +297,39 @@
                                 </div>
                             </div>
 
-                            <!-- Text input-->
-
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Address</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                        <input name="address" placeholder="Address" class="form-control" type="text">
-                                    </div>
+                                <label class="col-md-4 control-label">Marital Status</label>
+                                <div class="col-md-4">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="marital" value="yes" /> Yes
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="marital" value="no" /> No
+                                        </label>
                                 </div>
                             </div>
-
-                            <!-- Text input-->
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">City</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                        <input name="city" placeholder="city" class="form-control"  type="text">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Select Basic -->
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">State</label>
-                                <div class="col-md-4 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                        <select name="state" class="form-control selectpicker" >
-                                            <option value=" " >Please select your state</option>
-                                            <option>Alabama</option>
-                                            <option>Alaska</option>
-                                            <option >Arizona</option>
-                                            <option >Arkansas</option>
-                                            <option >California</option>
-                                            <option >Colorado</option>
-                                            <option >Connecticut</option>
-                                            <option >Delaware</option>
-                                            <option >District of Columbia</option>
-                                            <option> Florida</option>
-                                            <option >Georgia</option>
-                                            <option >Hawaii</option>
-                                            <option >daho</option>
-                                            <option >Illinois</option>
-                                            <option >Indiana</option>
-                                            <option >Iowa</option>
-                                            <option> Kansas</option>
-                                            <option >Kentucky</option>
-                                            <option >Louisiana</option>
-                                            <option>Maine</option>
-                                            <option >Maryland</option>
-                                            <option> Mass</option>
-                                            <option >Michigan</option>
-                                            <option >Minnesota</option>
-                                            <option>Mississippi</option>
-                                            <option>Missouri</option>
-                                            <option>Montana</option>
-                                            <option>Nebraska</option>
-                                            <option>Nevada</option>
-                                            <option>New Hampshire</option>
-                                            <option>New Jersey</option>
-                                            <option>New Mexico</option>
-                                            <option>New York</option>
-                                            <option>North Carolina</option>
-                                            <option>North Dakota</option>
-                                            <option>Ohio</option>
-                                            <option>Oklahoma</option>
-                                            <option>Oregon</option>
-                                            <option>Pennsylvania</option>
-                                            <option>Rhode Island</option>
-                                            <option>South Carolina</option>
-                                            <option>South Dakota</option>
-                                            <option>Tennessee</option>
-                                            <option>Texas</option>
-                                            <option> Uttah</option>
-                                            <option>Vermont</option>
-                                            <option>Virginia</option>
-                                            <option >Washington</option>
-                                            <option >West Virginia</option>
-                                            <option>Wisconsin</option>
-                                            <option >Wyoming</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Zip Code</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                        <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Website or domain name</label>
-                                <div class="col-md-4 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                        <input name="website" placeholder="Website or domain name" class="form-control" type="text">
-                                    </div>
-                                </div>
-                            </div>
-
                             <!-- radio checks -->
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Do you have hosting?</label>
+                                <label class="col-md-4 control-label">Persons with Disabilities?</label>
                                 <div class="col-md-4">
-                                    <div class="radio">
-                                        <label>
+                                        <label class="radio-inline">
                                             <input type="radio" name="hosting" value="yes" /> Yes
                                         </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label>
+                                        <label class="radio-inline">
                                             <input type="radio" name="hosting" value="no" /> No
                                         </label>
-                                    </div>
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Date of Birth</label>
+                                <div class="col-md-4">
+                                    <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                                        <input class="form-control" type="text" readonly />
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- Text area -->
 
                             <div class="form-group">
@@ -472,6 +463,16 @@
                 validating: 'glyphicon glyphicon-refresh'
             },
             fields: {
+                post_name: {
+                    validators: {
+                        stringLength: {
+                            min: 3,
+                        },
+                        notEmpty: {
+                            message: 'Please supply name of the post'
+                        }
+                    }
+                },
                 first_name: {
                     validators: {
                         stringLength: {
@@ -489,6 +490,46 @@
                         },
                         notEmpty: {
                             message: 'Please supply your last name'
+                        }
+                    }
+                },
+                mother_name: {
+                    validators: {
+                        stringLength: {
+                            min: 3,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your mother name'
+                        }
+                    }
+                },
+                state_name: {
+                    validators: {
+                        stringLength: {
+                            min: 3,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your state name'
+                        }
+                    }
+                },
+                nationality: {
+                    validators: {
+                        stringLength: {
+                            min: 3,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your Nationality'
+                        }
+                    }
+                },
+                religion: {
+                    validators: {
+                        stringLength: {
+                            min: 3,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your Religion'
                         }
                     }
                 },
@@ -533,13 +574,7 @@
                         }
                     }
                 },
-                state: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please select your state'
-                        }
-                    }
-                },
+
                 zip: {
                     validators: {
                         notEmpty: {
@@ -583,10 +618,13 @@
                     console.log(result);
                 }, 'json');
             });
+        $("#datepicker").datepicker({
+            autoclose: true,
+            todayHighlight: true
+        }).datepicker('update', new Date());
     });
 
-
 </script>
-
+<script src="js/bootstrap.datepicker.js"></script>
 </body>
 </html>

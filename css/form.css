@@ -5,3 +5,6 @@
 small {
     font-size: 90%;
 }
+.form-horizontal .control-label {
+    color: black;
+}

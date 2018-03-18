@@ -185,15 +185,20 @@
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                         <!-- Single button -->
                                         <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle" id="selectPost" type="button" data-toggle="dropdown" style="font-size: 14px;">Select Name of Post
-                                                <span class="caret"></span></button>
-                                            <ul class="dropdown-menu">
-                                                <li>Computer Operator</li>
-                                                <li>Loader</li>
-                                                <li>Search Officer</li>
-                                                <li>Store Keeper</li>
-
-                                            </ul>
+                                            <select class="form-control" id="postName" onchange='filterText()'>
+                                                <option disabled selected>Select Post Name</option>
+                                                <option value="cabinGrooming">Cabin Grooming</option>
+                                                <option value="rampStaff">Ramp Staff</option>
+                                                <option value="securityOfficer">Security Officer</option>
+                                                <option value="loader">Loader</option>
+                                                <option value="computerOperator">Computer Operator</option>
+                                                <option value="boardingStaff">Boarding Staff</option>
+                                                <option value="floorWalkingStaff">Floor Walking Staff</option>
+                                                <option value="checkingCounter">Checking Counter</option>
+                                                <option value="reservation">Reservation</option>
+                                                <option value="arrivalSupervisor">Arrival Supervisor</option>
+                                                <option value="catering">Catering</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -405,27 +410,62 @@
                                         <thead>
                                         <tr>
                                             <th>Examination</th>
-                                            <th>Documents</th>
+                                            <th>Upload Certificate</th>
 
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
+                                        <tbody id="qualificationTable">
+                                        <tr id="10pass" style="display: none;">
                                             <td><label class="control-label">10th</label></td>
                                             <td><label class="file-upload" style="font-size: 14px">
                                                 <input type="file" />
                                             </label>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="12pass" style="display: none;">
                                             <td><label class="control-label">12th</label></td>
                                             <td><label class="file-upload" style="font-size: 14px">
                                                 <input type="file"/>
                                             </label>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td><label class="control-label">Graduation</label></td>
+                                        <tr id="computer" style="display: none;">
+                                            <td><label class="control-label">Basic Computer</label></td>
+                                            <td><label class="file-upload" style="font-size: 14px">
+                                                <input type="file"/>
+                                            </label>
+                                            </td>
+                                        </tr>
+                                        <tr id="grads" style="display: none;">
+                                            <td><label class="control-label">Graduation (All Subject)</label></td>
+                                            <td><label class="file-upload" style="font-size: 14px">
+                                                <input type="file" />
+                                            </label>
+                                            </td>
+                                        </tr>
+                                        <tr id="ba" style="display: none;">
+                                            <td><label class="control-label">B.A.</label></td>
+                                            <td><label class="file-upload" style="font-size: 14px">
+                                                <input type="file" />
+                                            </label>
+                                            </td>
+                                        </tr>
+                                        <tr id="bsc" style="display: none;">
+                                            <td><label class="control-label">B.Sc(All Subject)</label></td>
+                                            <td><label class="file-upload" style="font-size: 14px">
+                                                <input type="file" />
+                                            </label>
+                                            </td>
+                                        </tr>
+                                        <tr id="bcom" style="display: none;">
+                                            <td><label class="control-label">B.Com</label></td>
+                                            <td><label class="file-upload" style="font-size: 14px">
+                                                <input type="file" />
+                                            </label>
+                                            </td>
+                                        </tr>
+                                        <tr id="hotelmgmt" style="display: none;">
+                                            <td><label class="control-label">Hotel Management</label></td>
                                             <td><label class="file-upload" style="font-size: 14px">
                                                 <input type="file" />
                                             </label>
@@ -741,16 +781,52 @@
         }).datepicker('update', new Date());
     });
 
-    $(function(){
+    function filterText()
+    {
+        var rex = new RegExp($('#postName').val());
+        rex=rex+"";
+        rex=rex.slice(1,rex.length-1);
+        switch(rex){
+            case "cabinGrooming" || "rampStaff" || "loader":
+                $('#10pass').show();
+                $('#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom').hide();
+                break;
+            case  "securityOfficer":
+                $('#12pass').show();
+                $('#10pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom,#computer').hide();
+                break;
+            case "boardingStaff" || "arrivalSupervisor":
+                $('#grads').show();
+                $('#10pass,#12pass,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom,#computer').hide();
+                break;
+            case "computerOperator":
+                $('#12pass,#computer').show();
+                $('#10pass,#grads,#hotermgmt,#ba,#bsc,#bcom').hide();
+                break;
+            case "hotermanagement":
+                $('#hotermgmt').show();
+                $('#10pass,#12pass,#grads,#12plusComputer,#ba,#bsc,#bcom,#computer').hide();
+                break;
+            case "floorWalkingStaff":
+                $('#ba').show();
+                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#bsc,#bcom,#computer').hide();
+                break;
+            case "checkingCounter":
+                $('#bsc').show();
+                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bcom,#computer').hide();
+                break;
+            case "reservation":
+                $('bcom').show();
+                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#computer').hide();
+                break;
+        }
+    }
 
-        $(".dropdown-menu li").click(function(){
-
-            $("#selectPost").text($(this).text());
-            $("#selectPost").val($(this).text());
-
-        });
-
-    });
+    function clearFilter()
+    {
+        $('#postName').val('');
+        $('.content').show();
+    }
 </script>
 <script src="js/bootstrap.datepicker.js"></script>
 </body>

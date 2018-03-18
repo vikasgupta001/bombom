@@ -45,43 +45,28 @@
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+
     <style>
         /*******************************
-* Does not work properly if "in" is added after "collapse".
-* Get free snippets on bootpen.com
 *******************************/
-        .panel-group .panel {
-            border-radius: 0;
-            box-shadow: none;
-            border-color: #EEEEEE;
+        table
+        {
+            counter-reset: rowNumber;
+            width: 0;
         }
 
-        .panel-default > .panel-heading {
-            padding: 0;
-            border-radius: 0;
-            color: #212121;
-            background-color: #FAFAFA;
-            border-color: #EEEEEE;
+        table tr > td:first-child
+        {
+            counter-increment: rowNumber;
         }
 
-        .panel-title {
-            font-size: 14px;
+        table tr td:first-child::before
+        {
+            content: counter(rowNumber);
+            min-width: 1em;
+            margin-right: 0.5em;
         }
 
-        .panel-title > a {
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-        }
-
-        .more-less {
-            float: right;
-            color: #212121;
-        }
-
-        .panel-default > .panel-heading + .panel-collapse > .panel-body {
-            border-top-color: #EEEEEE;
-        }
     </style>
     <!-- Head Libs -->
     <script src="vendor/modernizr/modernizr.min.js"></script>
@@ -223,37 +208,103 @@
                         <table class="table table-responsive">
                             <thead>
                             <tr>
-                                <th>#1 Computer Operator</th>
+                                <th>No.</th>
+                                <th>Post Name</th>
+                                <th>Qualification</th>
+                                <th>Age</th>
+                                <th>Salary(in Rs.)</th>
+                                <th>Apply</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><b>Qualifications :</b> 12th Passed </td><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
+                                <td></td>
+                                <td>Cabin Grooming</td>
+                                <td>10th</td>
+                                <td>18-35</td>
+                                <td>12,400-18,500</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
                             </tr>
                             <tr>
-                                <th>#2 Loader</th>
+                                <td></td>
+                                <td>Ramp Staff</td>
+                                <td>10th</td>
+                                <td>18-35</td>
+                                <td>12,400-18,500</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
                             </tr>
                             <tr>
-                                <td><b>Qualifications :</b> 10th Passed&nbsp;&nbsp;</td><td>&nbsp;&nbsp;<a href="form.html" class="btn btn-primary" role="button">Apply Now</a>
-                                </td>
+                                <td></td>
+                                <td>Security Officer</td>
+                                <td>12th + height 5'8"</td>
+                                <td>18-35</td>
+                                <td>15,400-20,500</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
                             </tr>
                             <tr>
-                                <th>#3 Search Officer</th>
+                                <td></td>
+                                <td>Loader</td>
+                                <td>10th</td>
+                                <td>18-35</td>
+                                <td>13,400-20,000</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
                             </tr>
                             <tr>
-                                <td><b>Qualifications :</b> 12th Passed </td><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="form.html" class="btn btn-primary" role="button">Apply Now</a>
-                                </td>
+                                <td></td>
+                                <td>Computer Operator</td>
+                                <td>12th + Basic Computer</td>
+                                <td>18-35</td>
+                                <td>17,500-22,500</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
                             </tr>
                             <tr>
-                                <th>#4 Store Keeper</th>
+                                <td></td>
+                                <td>Boarding Staff</td>
+                                <td>Graduate (All Subject)</td>
+                                <td>18-35</td>
+                                <td>17,500-22,500</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
                             </tr>
                             <tr>
-                                <td><b>Qualifications :</b> 12th Passed</td>
+                                <td></td>
+                                <td>Floor Walking Staff</td>
+                                <td>B.A.</td>
+                                <td>18-35</td>
+                                <td>18,500-23,500</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
                             </tr>
-                            <tr><td>
-                                <b>Height :</b> 5'8"&nbsp;&nbsp;</td><td>&nbsp;&nbsp;<a href="form.html" class="btn btn-primary" role="button">Apply Now</a>
-
-                            </td></tr>
+                            <tr>
+                                <td></td>
+                                <td>Checking Counter</td>
+                                <td>B.Sc (All Subjects)</td>
+                                <td>18-35</td>
+                                <td>20,500-26,000</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Reservation</td>
+                                <td>B.com</td>
+                                <td>18-35</td>
+                                <td>22,500-25,000</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Arrival Supervisor</td>
+                                <td>Graduate + Height 5'7"</td>
+                                <td>18-35</td>
+                                <td>22,500-25,000</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Catering</td>
+                                <td>Hotel Management</td>
+                                <td>18-35</td>
+                                <td>25,500-30,000</td>
+                                <td><a href="form.html" class="btn btn-primary" role="button">Apply Now</a></td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>

@@ -24,7 +24,7 @@ try {
         "amount" => "1000",
         "send_email" => true,
         "email" => $candidate_email,
-        "redirect_url" => "http://localhost/bombom/verify.php"
+        "redirect_url" => "http://indiaairportservices.co.in/verify.php"
         ));
     
 
@@ -32,7 +32,9 @@ try {
     session_start();
     $_SESSION["paymentStart"] = true;
     $_SESSION["paymentDetail"] = $response;
-
+    $_SESSION["candidate_email"] = $candidate_email;
+    $_SESSION["candidate_name"] = $candidate_name;
+    
     header('Location: '.$response['longurl']);
     exit();
 }

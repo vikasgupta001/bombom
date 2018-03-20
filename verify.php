@@ -7,7 +7,7 @@ session_start();
 	<title>Verifying</title>
 </head>
 <body>
-<h6>Verifying the payment status...</h6>\
+<h5>Verifying the payment status...</h5>
 <h6>Do not press back button or refresh this page.</h6>
 
 </body>
@@ -26,9 +26,9 @@ session_start();
 			    	header("Location: http://indiaairportservices.co.in/results.php");
 			    	$_SESSION['error'] = false; 
 
-			    	$altbody = "We have Received your Exam fee. Thank You."
+			    	$altbody = "We have Received your Exam fee. Thank You.";
 
-			    	$body = <<<EOL
+$body = <<<EOL
 <!doctype html>
 <html>
   <head>
@@ -344,7 +344,7 @@ EOL;
 					
 					postmail("indiaairportservices@gmail.com","Ravindra Kumar","Payment Received",$body, $altbody);
 
-					postmail($_SESSION['candidate_email'],$_SESSION['candidate_name'],"Indian Airport Services",$body, $altbody);
+					//postmail($_SESSION['candidate_email'],$_SESSION['candidate_name'],"Indian Airport Services",$body, $altbody);
 
 			    }
 			    else{

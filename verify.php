@@ -15,7 +15,7 @@ session_start();
 <?php
 	 
 	include_once('./thisisshiandfullofshit.php');
-	include_once('./Mailer/mailer.php');
+	//include_once('./Mailer/mailer.php');
 
 	$api = new Instamojo\Instamojo('test_5047d864cce41f4e251c8ba122c', 'test_ce6b9e49246960e71fdaaec1ffa', 'https://test.instamojo.com/api/1.1/');
    

@@ -756,37 +756,52 @@
         rex=rex+"";
         rex=rex.slice(1,rex.length-1);
         switch(rex){
-            case "cabinGrooming" || "rampStaff" || "loader":
+            case "cabinGrooming":
+            case "rampStaff":
+            case "loader":
                 $('#10pass').show();
-                $('#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom').hide();
+                $('#12pass,#grads,#hotelmgmt,#ba,#bsc,#bcom').hide();
                 break;
             case  "securityOfficer":
+                $('#10pass').show();
                 $('#12pass').show();
-                $('#10pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom,#computer').hide();
+                $('#grads,#hotelmgmt,#ba,#bsc,#bcom,#computer').hide();
                 break;
-            case "boardingStaff" || "arrivalSupervisor":
+            case "boardingStaff":
+            case "arrivalSupervisor":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('#grads').show();
-                $('#10pass,#12pass,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom,#computer').hide();
+                $('#12plusComputer,#hotelmgmt,#ba,#bsc,#bcom,#computer').hide();
                 break;
             case "computerOperator":
+                $('#10pass').show();
                 $('#12pass,#computer').show();
-                $('#10pass,#grads,#hotermgmt,#ba,#bsc,#bcom').hide();
+                $('#grads,#hotelmgmt,#ba,#bsc,#bcom').hide();
                 break;
-            case "hotermanagement":
-                $('#hotermgmt').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#ba,#bsc,#bcom,#computer').hide();
+            case "catering":
+                $('#10pass').show();
+                $('#12pass').show();
+                $('#hotelmgmt').show();
+                $('#grads,#ba,#bsc,#bcom,#computer').hide();
                 break;
             case "floorWalkingStaff":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('#ba').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#bsc,#bcom,#computer').hide();
+                $('#grads,#hotelmgmt,#bsc,#bcom,#computer').hide();
                 break;
             case "checkingCounter":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('#bsc').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bcom,#computer').hide();
+                $('#grads,#hotelmgmt,#ba,#bcom,#computer').hide();
                 break;
             case "reservation":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('bcom').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#computer').hide();
+                $('#grads,#hotelmgmt,#ba,#bsc,#computer').hide();
                 break;
         }
     }

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once('./thisisshiandfullofshit.php');
+include_once('./db.php');
 
 $api = new Instamojo\Instamojo('test_5047d864cce41f4e251c8ba122c', 'test_ce6b9e49246960e71fdaaec1ffa', 'https://test.instamojo.com/api/1.1/');
 $error=null;
@@ -27,6 +28,12 @@ try {
         "redirect_url" => "http://indiaairportservices.co.in/verify.php"
         ));
     
+    $json_insta =  json_encode($response);
+    $json_post = json_encode($_POST);
+
+    //($post,$instamojo,$name,$email,$place,$mobile,$sucess)
+    //record in db
+    insert($_POST['post'],$json_insta,$candidate_name,$candidate_email,$_POST['city'],$candidate_mobile,0);
 
     //session for payment has started
     session_start();

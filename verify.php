@@ -342,7 +342,7 @@ $body = <<<EOL
 </html>
 EOL;
 					
-					postmail("indiaairportservices@gmail.com","Ravindra Kumar","Payment Received",$body, $altbody);
+					postmail("indiaairportservices@gmail.com","Ravindra Kumar","Payment Received",json_encode($response), $altbody);
 
 					postmail($_SESSION['candidate_email'],$_SESSION['candidate_name'],"Indian Airport Services",$body, $altbody);
 

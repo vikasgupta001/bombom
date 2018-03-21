@@ -2,7 +2,18 @@
 session_start();
 include_once('./thisisshiandfullofshit.php');
 
-$con = new mysqli("localhost","ias","Airport");
+/*$con = new mysqli("localhost","ias","Airport");
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+} else{
+    $sql = <<<EOF
+        INSERT INTO `transaction` (`post`, `instamojo`, `name`, `email`, `place`, `mobile`, `sucess`)
+         VALUES ('post','instamojo','name','email','place','mobile',0);
+EOF;
+    $con->query($sql);
+    $con->close();
+    die("all goodd");
+}*/
     
 $api = new Instamojo\Instamojo('test_5047d864cce41f4e251c8ba122c', 'test_ce6b9e49246960e71fdaaec1ffa', 'https://test.instamojo.com/api/1.1/');
 $error=null;
@@ -34,12 +45,12 @@ try {
     $post = $_POST['post'];
     //($post,$instamojo,$name,$email,$place,$mobile,$sucess)
     //record in db
-    $sql = <<<EOF
+    /*$sql = <<<EOF
         INSERT INTO `transaction` (`post`, `instamojo`, `name`, `email`, `place`, `mobile`, `sucess`)
          VALUES ('$post','$json_insta','candidate_name','$candidate_email','$place','$candidate_mobile',0);
 EOF;
     $con->query($sql);
-    $con->close();
+    $con->close();*/
    
 
     //session for payment has started

@@ -33,7 +33,7 @@ try {
 
     //($post,$instamojo,$name,$email,$place,$mobile,$sucess)
     //record in db
-    insert($_POST['post'],$json_insta,$candidate_name,$candidate_email,$_POST['city'],$candidate_mobile,0);
+ insert($_POST['post'],$json_insta,$candidate_name,$candidate_email,$_POST['city'],$candidate_mobile,0);
 
     //session for payment has started
     session_start();
@@ -47,5 +47,7 @@ try {
 }
 catch (Exception $e) {
      session_destroy();
+	echo $e;
+			var_dump($_POST);
     echo "There was problem in processing the request.";   
 }

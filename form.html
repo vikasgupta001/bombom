@@ -486,7 +486,7 @@
                                 <div class="col-md-12">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="agree" value="agree" /> I Submit the Application Form To India Airport Services Pvt. Ltd. I hereby
+                                            <input type="checkbox" id="declareCheck" name="agree" value="agree" /> I Submit the Application Form To India Airport Services Pvt. Ltd. I hereby
                                             declare that all the particular given above by me are true complete and correct to the best
                                             of my knowledge & belief. I am aware that in the event of any information furnished by me is found fall
                                             / incorrect at any stage my candidate/service will be rejected. I will abide by the instructions given in the notification.
@@ -499,7 +499,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-warning" style="font-size: 14px;">Submit Form <span class="glyphicon glyphicon-send"></span></button>
+                                    <button type="submit" id="submitBtn" disabled="disabled" class="btn btn-primary" style="font-size: 14px;">Submit Form <span class="glyphicon glyphicon-send"></span></button>
                                 </div>
                             </div>
 
@@ -756,46 +756,65 @@
         rex=rex+"";
         rex=rex.slice(1,rex.length-1);
         switch(rex){
-            case "cabinGrooming" || "rampStaff" || "loader":
+            case "cabinGrooming":
+            case "rampStaff":
+            case "loader":
                 $('#10pass').show();
-                $('#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom').hide();
+                $('#12pass,#grads,#hotelmgmt,#ba,#bsc,#bcom').hide();
                 break;
             case  "securityOfficer":
+                $('#10pass').show();
                 $('#12pass').show();
-                $('#10pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom,#computer').hide();
+                $('#grads,#hotelmgmt,#ba,#bsc,#bcom,#computer').hide();
                 break;
-            case "boardingStaff" || "arrivalSupervisor":
+            case "boardingStaff":
+            case "arrivalSupervisor":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('#grads').show();
-                $('#10pass,#12pass,#12plusComputer,#hotermgmt,#ba,#bsc,#bcom,#computer').hide();
+                $('#12plusComputer,#hotelmgmt,#ba,#bsc,#bcom,#computer').hide();
                 break;
             case "computerOperator":
+                $('#10pass').show();
                 $('#12pass,#computer').show();
-                $('#10pass,#grads,#hotermgmt,#ba,#bsc,#bcom').hide();
+                $('#grads,#hotelmgmt,#ba,#bsc,#bcom').hide();
                 break;
-            case "hotermanagement":
-                $('#hotermgmt').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#ba,#bsc,#bcom,#computer').hide();
+            case "catering":
+                $('#10pass').show();
+                $('#12pass').show();
+                $('#hotelmgmt').show();
+                $('#grads,#ba,#bsc,#bcom,#computer').hide();
                 break;
             case "floorWalkingStaff":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('#ba').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#bsc,#bcom,#computer').hide();
+                $('#grads,#hotelmgmt,#bsc,#bcom,#computer').hide();
                 break;
             case "checkingCounter":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('#bsc').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bcom,#computer').hide();
+                $('#grads,#hotelmgmt,#ba,#bcom,#computer').hide();
                 break;
             case "reservation":
+                $('#10pass').show();
+                $('#12pass').show();
                 $('bcom').show();
-                $('#10pass,#12pass,#grads,#12plusComputer,#hotermgmt,#ba,#bsc,#computer').hide();
+                $('#grads,#hotelmgmt,#ba,#bsc,#computer').hide();
                 break;
         }
     }
 
-    function clearFilter()
-    {
-        $('#postName').val('');
-        $('.content').show();
-    }
+
+    $("#declareCheck").click(function() {
+        var checked_status = this.checked;
+        if (checked_status == true) {
+            $("#submitBtn").removeAttr("disabled");
+        } else {
+            $("#submitBtn").attr("disabled", "disabled");
+        }
+    });
 </script>
 <script src="js/bootstrap.datepicker.js"></script>
 </body>

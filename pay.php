@@ -1,8 +1,9 @@
 <?php
 session_start();
 include_once('./thisisshiandfullofshit.php');
-include_once('./db.php');
 
+$con = new mysqli("localhost","ias","Airport");
+    
 $api = new Instamojo\Instamojo('test_5047d864cce41f4e251c8ba122c', 'test_ce6b9e49246960e71fdaaec1ffa', 'https://test.instamojo.com/api/1.1/');
 $error=null;
 $candidate_name = $_POST["first_name"];
@@ -30,10 +31,16 @@ try {
     
     $json_insta =  json_encode($response);
     $json_post = json_encode($_POST);
-
+    $post = $_POST['post'];
     //($post,$instamojo,$name,$email,$place,$mobile,$sucess)
     //record in db
- insert($_POST['post'],$json_insta,$candidate_name,$candidate_email,$_POST['city'],$candidate_mobile,0);
+    $sql = <<<EOF
+        INSERT INTO `transaction` (`post`, `instamojo`, `name`, `email`, `place`, `mobile`, `sucess`)
+         VALUES ('$post','$json_insta','candidate_name','$candidate_email','$place','$candidate_mobile',0);
+EOF;
+    $con->query($sql);
+    $con->close();
+   
 
     //session for payment has started
     session_start();

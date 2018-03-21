@@ -486,7 +486,7 @@
                                 <div class="col-md-12">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="agree" value="agree" /> I Submit the Application Form To India Airport Services Pvt. Ltd. I hereby
+                                            <input type="checkbox" id="declareCheck" name="agree" value="agree" /> I Submit the Application Form To India Airport Services Pvt. Ltd. I hereby
                                             declare that all the particular given above by me are true complete and correct to the best
                                             of my knowledge & belief. I am aware that in the event of any information furnished by me is found fall
                                             / incorrect at any stage my candidate/service will be rejected. I will abide by the instructions given in the notification.
@@ -499,7 +499,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-warning" style="font-size: 14px;">Submit Form <span class="glyphicon glyphicon-send"></span></button>
+                                    <button type="submit" id="submitBtn" disabled="disabled" class="btn btn-primary" style="font-size: 14px;">Submit Form <span class="glyphicon glyphicon-send"></span></button>
                                 </div>
                             </div>
 
@@ -806,11 +806,15 @@
         }
     }
 
-    function clearFilter()
-    {
-        $('#postName').val('');
-        $('.content').show();
-    }
+
+    $("#declareCheck").click(function() {
+        var checked_status = this.checked;
+        if (checked_status == true) {
+            $("#submitBtn").removeAttr("disabled");
+        } else {
+            $("#submitBtn").attr("disabled", "disabled");
+        }
+    });
 </script>
 <script src="js/bootstrap.datepicker.js"></script>
 </body>

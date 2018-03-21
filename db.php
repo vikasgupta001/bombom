@@ -3,10 +3,10 @@
 	//$con = new mysqli("localhost","root","");
 	
 	function insert($post,$instamojo,$name,$email,$place,$mobile,$sucess){
-		$sql =<<<HERE 
+$sql = <<<EOF
 		INSERT INTO `transaction` (`post`, `instamojo`, `name`, `email`, `place`, `mobile`, `sucess`)
-		 VALUES ('$post','$instamojo','$name','$email','$place','$mobile',0);"
-HERE;
+		 VALUES ('$post','$instamojo','$name','$email','$place','$mobile',0);
+EOF;
 	$con->query($sql);
 	$con->close();
 	}

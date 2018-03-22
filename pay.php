@@ -2,7 +2,7 @@
 session_start();
 include_once('./thisisshiandfullofshit.php');
 
-$con = new mysqli("localhost","ias","password","Airport");
+$con = new mysqli("localhost","ias","Airport");
 if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 } else{

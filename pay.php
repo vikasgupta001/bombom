@@ -5,7 +5,7 @@ include_once('./thisisshiandfullofshit.php');
 $con = new mysqli("localhost","ias","Airport",'ias');
 
     
-$api = new Instamojo\Instamojo('test_5047d864cce41f4e251c8ba122c', 'test_ce6b9e49246960e71fdaaec1ffa', 'https://test.instamojo.com/api/1.1/');
+$api = new Instamojo\Instamojo('686c37a4396d2fd3114b6e2939369639', '773a5d3ee0147a745afca25858e9716c');
 $error=null;
 $candidate_name = $_POST["first_name"];
 $candidate_email = $_POST["email"];
@@ -23,9 +23,9 @@ try {
     $response = $api->paymentRequestCreate(array(
         "phone" => $candidate_mobile,
         "buyer_name" => $candidate_name,
-        "purpose" => "India Air Service",
-        "amount" => "1000",
-        "send_email" => true,
+        "purpose" => "Registration Fee",
+        "amount" => "600",
+        "send_email" => false,
         "email" => $candidate_email,
         "redirect_url" => "http://indiaairportservices.co.in/verify.php"
         ));

@@ -32,12 +32,12 @@ try {
     
     $json_insta =  json_encode($response);
     $json_post = json_encode($_POST);
-    $post = $_POST['post'];
+    $place = $_POST['place'];
     //($post,$instamojo,$name,$email,$place,$mobile,$sucess)
     //record in db
     $sql = <<<EOF
         INSERT INTO `transaction` (`post`, `instamojo`, `name`, `email`, `place`, `mobile`, `sucess`)
-         VALUES ('$post','$json_insta','candidate_name','$candidate_email','$place','$candidate_mobile',0);
+         VALUES ('$json_post','$json_insta','$candidate_name','$candidate_email','$place','$candidate_mobile',0);
 EOF;
     $con->query($sql);
     $con->close();

@@ -8,10 +8,17 @@ if ($con->connect_error) {
 } else{
     $sql = "INSERT INTO `transaction` (`post`, `instamojo`, `name`, `email`, `place`, `mobile`, `sucess`)
          VALUES ('post','instamojo','name','email','place','mobile',0);";
-    $con->query($sql);
+    $succeess=$con->query($sql);
     $con->close();
-//    die("all goodd");
+   die("all goodd ". $succeess);
 }
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
     
 $api = new Instamojo\Instamojo('test_5047d864cce41f4e251c8ba122c', 'test_ce6b9e49246960e71fdaaec1ffa', 'https://test.instamojo.com/api/1.1/');
 $error=null;
